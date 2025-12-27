@@ -1,66 +1,84 @@
-#include<iostream>
+#include <iostream>
 
 using namespace std;
 
-
-void decimalToBinary() {
-    long long sum=0, dnum;
+void decimalToBinary()
+{
+    long long sum = 0, dnum;
     cout << "Enter the decimal number: ";
     cin >> dnum;
-    if (dnum == 0) {
-    cout << "Binary form is = " << sum << endl;
-    } else {
+    if (dnum == 0)
+    {
+        cout << "Binary form is = " << sum << endl;
+    }
+    else
+    {
         long long i = 1;
-        while(dnum>0) {
-            int binary = dnum%2;
-            sum += binary*i;
-            dnum = (long long) dnum/2;
-            i*=10;
+        while (dnum > 0)
+        {
+            int binary = dnum % 2;
+            sum += binary * i;
+            dnum = (long long)dnum / 2;
+            i *= 10;
         }
         cout << "Binary form is = " << sum << endl;
     }
 }
 
-void binaryToDecimal() {
+void binaryToDecimal()
+{
     long long i = 1, sum = 0, bnum;
     cout << "Enter the bianry number: ";
     cin >> bnum;
-    while(bnum>0) {
-        long long decimal = bnum%10;
-        sum += decimal*i;
-        bnum = (long long) bnum/10;
-        i*=2;
+    while (bnum > 0)
+    {
+        long long decimal = bnum % 10;
+        sum += decimal * i;
+        bnum = (long long)bnum / 10;
+        i *= 2;
     }
     cout << "Decimal form is = " << sum << endl;
 }
 
-
-
-int main() {
+int main()
+{
     int choice;
-    cout << "Welcome to the Number System conversion!" << endl << "Choose!" << endl;
-    cout << "1. Decimal to binary\n" << "2. Binary to Decimal\n" << "Choice: ";
+    cout << "Welcome to the Number System conversion!" << endl
+         << "Choose!" << endl;
+    cout << "1. Decimal to binary\n"
+         << "2. Binary to Decimal\n"
+         << "Choice: ";
     cin >> choice;
 
-    if(choice == 1) {
+    if (choice == 1)
+    {
         decimalToBinary();
-        while (1) {
+        while (1)
+        {
             char choice;
             cout << "Convert again? [y/n]: ";
             cin >> choice;
-            if (choice == 'y') decimalToBinary(); else break;
+            if (choice == 'y')
+                decimalToBinary();
+            else
+                break;
         }
-    } else if (choice == 2) {
+    }
+    else if (choice == 2)
+    {
         binaryToDecimal();
-        while (1) {
+        while (1)
+        {
             char choice;
             cout << "Convert again? [y/n]: ";
             cin >> choice;
-            if (choice == 'y') binaryToDecimal(); else break;
+            if (choice == 'y')
+                binaryToDecimal();
+            else
+                break;
         }
     }
 }
-
 
 // Another version where i used a string to showcase the conversion.
 // This method is memory extensive!
@@ -83,7 +101,7 @@ int main() {
         }
         cout << "Binary form is = " << str << endl;
     }
-    
+
 }
 
 */
