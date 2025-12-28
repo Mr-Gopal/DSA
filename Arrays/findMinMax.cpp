@@ -1,14 +1,11 @@
 #include <iostream>
 using namespace std;
 
-int main()
-{
+int main(){
     int n;
     cout << "Enter the size of array: ";
     cin >> n;
-
-    if (n <= 0)
-    {
+    if (n <= 0){
         cout << "Size can't be zero or negative" << endl;
         return 0;
     }
@@ -16,29 +13,44 @@ int main()
     int arr[n];
     int arrSize = sizeof(arr) / sizeof(arr[0]);
 
+
     // Take values of array
-    for (int i = 0; i < arrSize; i++)
-    {
+    for (int i = 0; i < arrSize; i++){
         cout << "value: " << i + 1 << " = ";
         cin >> arr[i];
     }
+
     int max = arr[0], min = arr[0], indexMax = 0, indexMin = 0;
 
-    for (int i = 0; i < arrSize; i++)
-    {
-        if (min > arr[i])
-        {
+    // find min and max values with thier respective indices
+    for (int i = 0; i < arrSize; i++){
+        if (min > arr[i]){
             min = arr[i];
             indexMin = i;
         }
-        if (max < arr[i])
-        {
+        if (max < arr[i]){
             max = arr[i];
             indexMax = i;
         }
     }
 
-    cout << "Max = " << max << "\tat:" << indexMax << endl
+    // print the array before swap
+    cout << "\nBefore swap: ";
+    for(int i=0; i<arrSize; i++){
+        cout << arr[i] << " ";
+    }
+
+    cout << "\nMax = " << max << "\tat:" << indexMax << endl
          << "Min = " << min << "\tat:" << indexMin << endl;
+
+
+    // Swap the values of max and min
+    swap(arr[indexMin], arr[indexMax]);
+
+    // print the array after swap
+    cout << "\nAfter swap: ";
+    for(int i=0; i<arrSize; i++){
+        cout << arr[i] << " ";
+    }
     return 0;
 }
