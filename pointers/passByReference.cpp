@@ -10,6 +10,14 @@ void changeX(int* ptr) { // pass by reference
     *ptr = 404;
 }
 
+// Note- pass by reference can also be done using alias
+/*
+void changeX(int &x) {
+    x = 30;
+}
+changeX(x);
+*/
+
 int main() {
     int x = 200;
     changeX(x);
