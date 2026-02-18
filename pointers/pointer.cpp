@@ -30,7 +30,7 @@ int main() {
     // Types of pointers
     // 1. Null pointer -> doesn't point any memory location.
     int** ptr3;
-    cout<<ptr3<<endl; // gives garbage address
+    cout<<ptr3<<endl; // gives garbage address.
     int** ptr4 = NULL;
     cout<<ptr4<<endl;
 
