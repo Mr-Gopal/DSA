@@ -18,6 +18,7 @@ int binarySearch(vector<int> arr, int target) {
     return -1;
 }
 
+// Optimization to handle space overflow! 
 // worst case: st = INT_Min, end = INT_MAX => st+end >> INT_MAX
 int binarySearchOptim(vector<int> arr, int target) {
     int st = 0, end = arr.size() - 1;
